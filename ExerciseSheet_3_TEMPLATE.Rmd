@@ -67,15 +67,10 @@ Some new files will automatically be
 For this task you will upload your solution to GitHub.
 
 ### a)  
-Create a new repository on GitHub in your account named
-    `exeRcise-sheet-3`. Make sure you create a **public repository** so
-    we are able to see it for grading. Add the link to the repository
-    below:  
+Create a new repository on GitHub in your account named `exeRcise-sheet-3`. Make sure you create a **public repository** so we are able to see it for grading. Add the link to the repository below:  
     
 ### b)  
-Push your code to this new repository by copying and executing the
-    snippet on github listed under
-    `…or push an existing repository from the command line`.  
+Push your code to this new repository by copying and executing the snippet on github listed under `…or push an existing repository from the command line`.  
     
 ### c)  
 Regularly push your latest changes to GitHub again and especially do
@@ -115,18 +110,30 @@ pixar_clean <- pixar_clean %>%
 ```
 -  The film_rating variable contains categories such as G, PG, and PG-13. Since these are non-numeric and represent distinct groups, converting it to a factor is appropriate.
 
-
-
-
-
-
-
-b)  Inspect the film titles manually. Which films form a film series? A
+### b)  
+Inspect the film titles manually. Which films form a film series? A
     film series can be identified by a common word in the titles of the
     films, often in conjunction with a number in the title,
     e.g. "Despicable Me" and "Despicable Me 2". Create a dataframe which
     displays a list of the different series with the titles of the films
     and how many films belong to the series. Output the dataframe.
+```{r}
+pixar_series <- pixar_clean %>%
+  filter(str_detect(film, "Toy Story|Cars|Finding|Incredibles")) %>%
+  mutate(series = case_when(
+    str_detect(film, "Toy Story") ~ "Toy Story",
+    str_detect(film, "Cars") ~ "Cars",
+    str_detect(film, "Finding") ~ "Finding",
+    str_detect(film, "Incredibles") ~ "Incredibles"
+  )) %>%
+  group_by(series) %>%
+  summarise(
+    films = paste(film, collapse = ", "),
+    n_films = n(),
+    .groups = "drop"
+  )
+```
+    
 
 c)  Load the `public_response` dataframe into R. Convert the
     `cinema_score` variable into a factor while ensuring the factor
