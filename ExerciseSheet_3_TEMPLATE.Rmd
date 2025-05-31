@@ -74,7 +74,7 @@ b)  Push your code to this new repository by copying and executing the
 c)  Regularly push your latest changes to GitHub again and especially do
     so when you are finished with this sheet.
 
-## Exercise 3: Pixar Films (4 Points)
+<!-- ## Exercise 3: Pixar Films (4 Points) -->
 
 Download the `pixar_films` and `public_response` datasets from the
 GitHub repository and track them in git.
