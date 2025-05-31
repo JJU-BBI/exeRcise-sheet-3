@@ -91,12 +91,35 @@ Link:
 
 For small datasets like these adding them to git is not a problem.
 
-a)  Load the `pixar_films` dataset into R. Clean the dataset by removing
+### a)  
+Load the `pixar_films` dataset into R. Clean the dataset by removing
     films without a title. Inspect the variable `film_rating`. What are
     the possible values and what do they mean? Create a factor variable
     for the film rating. Why is this appropriate?
+```{r}
+library(tidyverse)
+```
+```{r}
+pixar <- read_csv("pixar_films.csv")
+```
+```{r}
+pixar_clean <- pixar %>%
+  filter(!is.na(film))
+```
+```{r}
+unique(pixar_clean$film_rating)
+```
+```{r}
+pixar_clean <- pixar_clean %>%
+  mutate(film_rating = as.factor(film_rating))
+```
+-  The film_rating variable contains categories such as G, PG, and PG-13. Since these are non-numeric and represent distinct groups, converting it to a factor is appropriate.
 
-<!-- -->
+
+
+
+
+
 
 b)  Inspect the film titles manually. Which films form a film series? A
     film series can be identified by a common word in the titles of the
