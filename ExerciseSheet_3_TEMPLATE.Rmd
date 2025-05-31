@@ -53,7 +53,8 @@ in git.
 1. Git has a steep learning curve for beginners.  
 2. Merge conflicts can be difficult to resolve without experience.
 
-e)  Knit this exercise sheet. Some new files will automatically be
+### e)  Knit this exercise sheet. 
+Some new files will automatically be
     generated when knitting the sheet e.g. the HTML page. Ignore these
     files, as we only want to track the source files themselves. You
     can, but don't need to create a `.gitignore` file. Just do not
