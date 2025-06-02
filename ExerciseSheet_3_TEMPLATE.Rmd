@@ -236,14 +236,24 @@ Come up with a (research) question you want to answer with the data
 ```{r}
 oecd_life <- read_csv("Life expectancy - OECD.csv")
 ```
--  How has life expectancy changed in OECD countries over time, and which countries have seen the biggest improvements?  
-This question helps us understand if improvements in life expectancy are shared equally among wealthy countries.  
+-  How has life expectancy changed in OECD countries since 1960, and which countries have seen the biggest improvements?  
+This question is important because it shows how healthcare, policy, and development have affected how long people live in developed economies.  
     
 ### e)  
 Use R to answer your chosen question. Please limit your analysis to
     the functions and techniques we have covered so far in the course.
     You are **not expected** to use advanced statistical models or
     external packages which haven't been introduced.
+```{r}
+oecd_summary <- oecd_life %>%
+  rename(country = Entity,
+         year = Year,
+         life_expectancy = `Life Expectancy (OECD)`) %>%
+  filter(!is.na(life_expectancy)) %>%
+  group_by(year) %>%
+  summarise(mean_life = mean(life_expectancy), .groups = "drop")
+```
+    
     
 f)  Create a meaningful plot / figure with the dataset. Make sure to
     provide a figure caption (via the chunk options / Rmarkdown) and
