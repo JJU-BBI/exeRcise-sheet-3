@@ -246,14 +246,30 @@ Use R to answer your chosen question. Please limit your analysis to
     external packages which haven't been introduced.
 ```{r}
 oecd_summary <- oecd_life %>%
-  rename(country = Entity,
-         year = Year,
-         life_expectancy = `Life Expectancy (OECD)`) %>%
+  rename(
+    country = Entity,
+    year = Year,
+    life_expectancy = `Life Expectancy (OECD)`
+  )
+```
+```{r}
+oecd_year <- oecd_summary %>%
   filter(!is.na(life_expectancy)) %>%
   group_by(year) %>%
   summarise(mean_life = mean(life_expectancy), .groups = "drop")
 ```
-    
+```{r}
+change_by_country <- oecd_summary %>%
+  filter(year %in% c(1960, 2015)) %>%
+  pivot_wider(names_from = year, values_from = life_expectancy) %>%
+  drop_na(`1960`, `2015`) %>%
+  mutate(change = `2015` - `1960`) %>%
+  arrange(desc(change))
+```
+-   Life expectancy in OECD countries has steadily increased from around 64 years in 1960 to over 78 years in 2015.
+Countries such as China, Turkey and India experienced the most significant improvements, gaining over 25 years.
+This demonstrates the positive impact of healthcare, economic growth, and policy reforms in enabling some countries to catch up significantly over time.  
+
     
 f)  Create a meaningful plot / figure with the dataset. Make sure to
     provide a figure caption (via the chunk options / Rmarkdown) and
