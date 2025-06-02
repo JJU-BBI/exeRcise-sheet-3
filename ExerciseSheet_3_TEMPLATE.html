@@ -93,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; }
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2025-06-01" />
-  <meta property="article:created" itemprop="dateCreated" content="2025-06-01" />
+  <meta property="article:published" itemprop="datePublished" content="2025-06-02" />
+  <meta property="article:created" itemprop="dateCreated" content="2025-06-02" />
   <meta name="article:author" content="Joo Won Kim (12758995), Name (Martrikelnummer)" />
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -110,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; }
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Exercise #3"]},{"type":"character","attributes":{},"value":["Fortgeschrittene Statistische Software für NF"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Joo Won Kim (12758995), Name (Martrikelnummer)"]}]}]},{"type":"character","attributes":{},"value":["2025-06-01"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Exercise #3"]},{"type":"character","attributes":{},"value":["Fortgeschrittene Statistische Software für NF"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Joo Won Kim (12758995), Name (Martrikelnummer)"]}]}]},{"type":"character","attributes":{},"value":["2025-06-02"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2358,7 +2358,7 @@ distill-header .nav a {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Exercise #3","authors":[{"author":"Joo Won Kim (12758995), Name (Martrikelnummer)","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-06-01T00:00:00.000+02:00","citationText":"(Martrikelnummer), 2025"}
+{"title":"Exercise #3","authors":[{"author":"Joo Won Kim (12758995), Name (Martrikelnummer)","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-06-02T00:00:00.000+02:00","citationText":"(Martrikelnummer), 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2379,7 +2379,7 @@ distill-header .nav a {
   
   Joo Won Kim (12758995), Name (Martrikelnummer)
   
-<br />2025-06-01
+<br />2025-06-02
 </div>
 
 <div class="d-article">
@@ -2440,14 +2440,9 @@ commit these files manually.</p>
 <h2 id="exercise-2-putting-your-repository-on-github-3-points">Exercise 2: Putting your Repository on GitHub (3 Points)</h2>
 <p>For this task you will upload your solution to GitHub.</p>
 <h3 id="a-1">a)</h3>
-<p>Create a new repository on GitHub in your account named
-<code>exeRcise-sheet-3</code>. Make sure you create a <strong>public repository</strong> so
-we are able to see it for grading. Add the link to the repository
-below:</p>
+<p>Create a new repository on GitHub in your account named <code>exeRcise-sheet-3</code>. Make sure you create a <strong>public repository</strong> so we are able to see it for grading. Add the link to the repository below:</p>
 <h3 id="b">b)</h3>
-<p>Push your code to this new repository by copying and executing the
-snippet on github listed under
-<code>…or push an existing repository from the command line</code>.</p>
+<p>Push your code to this new repository by copying and executing the snippet on github listed under <code>…or push an existing repository from the command line</code>.</p>
 <h3 id="c">c)</h3>
 <p>Regularly push your latest changes to GitHub again and especially do
 so when you are finished with this sheet.</p>
@@ -2457,72 +2452,189 @@ GitHub repository and track them in git.</p>
 <p>Link:
 <a href="https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-03-11" class="uri">https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-03-11</a></p>
 <p>For small datasets like these adding them to git is not a problem.</p>
-<ol type="a">
-<li>Load the <code>pixar_films</code> dataset into R. Clean the dataset by removing
+<h3 id="a-2">a)</h3>
+Load the <code>pixar_films</code> dataset into R. Clean the dataset by removing
 films without a title. Inspect the variable <code>film_rating</code>. What are
 the possible values and what do they mean? Create a factor variable
-for the film rating. Why is this appropriate?</li>
-</ol>
-<!-- -->
-<ol start="2" type="a">
-<li><p>Inspect the film titles manually. Which films form a film series? A
+for the film rating. Why is this appropriate?
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">pixar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">&quot;pixar_films.csv&quot;</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">pixar_clean</span> <span class="op">&lt;-</span> <span class="va">pixar</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">film</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">pixar_clean</span><span class="op">$</span><span class="va">film_rating</span><span class="op">)</span></span></code></pre>
+</div>
+<pre><code>[1] &quot;G&quot;   &quot;PG&quot;  &quot;N/A&quot;</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">pixar_clean</span> <span class="op">&lt;-</span> <span class="va">pixar_clean</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>film_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">film_rating</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<ul>
+<li>The film_rating variable contains categories such as G, PG, and PG-13. Since these are non-numeric and represent distinct groups, converting it to a factor is appropriate.</li>
+</ul>
+<h3 id="b-1">b)</h3>
+Inspect the film titles manually. Which films form a film series? A
 film series can be identified by a common word in the titles of the
 films, often in conjunction with a number in the title,
 e.g. “Despicable Me” and “Despicable Me 2”. Create a dataframe which
 displays a list of the different series with the titles of the films
-and how many films belong to the series. Output the dataframe.</p></li>
-<li><p>Load the <code>public_response</code> dataframe into R. Convert the
+and how many films belong to the series. Output the dataframe.
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">pixar_series</span> <span class="op">&lt;-</span> <span class="va">pixar_clean</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Toy Story|Cars|Finding|Incredibles&quot;</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>series <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Toy Story&quot;</span><span class="op">)</span> <span class="op">~</span> <span class="st">&quot;Toy Story&quot;</span>,</span>
+<span>    <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Cars&quot;</span><span class="op">)</span> <span class="op">~</span> <span class="st">&quot;Cars&quot;</span>,</span>
+<span>    <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Finding&quot;</span><span class="op">)</span> <span class="op">~</span> <span class="st">&quot;Finding&quot;</span>,</span>
+<span>    <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Incredibles&quot;</span><span class="op">)</span> <span class="op">~</span> <span class="st">&quot;Incredibles&quot;</span></span>
+<span>  <span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">series</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    films <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">film</span>, collapse <span class="op">=</span> <span class="st">&quot;, &quot;</span><span class="op">)</span>,</span>
+<span>    n_films <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    .groups <span class="op">=</span> <span class="st">&quot;drop&quot;</span></span>
+<span>  <span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">pixar_series</span></span></code></pre>
+</div>
+<pre><code># A tibble: 4 × 3
+  series      films                                            n_films
+  &lt;chr&gt;       &lt;chr&gt;                                              &lt;int&gt;
+1 Cars        Cars, Cars 2, Cars 3                                   3
+2 Finding     Finding Nemo, Finding Dory                             2
+3 Incredibles The Incredibles, Incredibles 2                         2
+4 Toy Story   Toy Story, Toy Story 2, Toy Story 3, Toy Story 4       4</code></pre>
+</div>
+<h3 id="c-1">c)</h3>
+Load the <code>public_response</code> dataframe into R. Convert the
 <code>cinema_score</code> variable into a factor while ensuring the factor
 levels are defined in ascending order, from the lowest to the
 highest score. Combine <code>public_response</code> with the <code>pixar_films</code>
-dataset using an appropriate merge variable.</p></li>
-<li><p>Choose one of the variables representing the public response and
+dataset using an appropriate merge variable.
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">public</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">&quot;public_response.csv&quot;</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">public</span> <span class="op">&lt;-</span> <span class="va">public</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cinema_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span></span>
+<span>    <span class="va">cinema_score</span>,</span>
+<span>    levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">&quot;D&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A-&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A+&quot;</span><span class="op">)</span>,</span>
+<span>    ordered <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">public</span><span class="op">$</span><span class="va">cinema_score</span><span class="op">)</span></span></code></pre>
+</div>
+<pre><code>[1] &quot;D&quot;  &quot;C&quot;  &quot;B&quot;  &quot;A-&quot; &quot;A&quot;  &quot;A+&quot;</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">combined</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">pixar_clean</span>, <span class="va">public</span>, by <span class="op">=</span> <span class="st">&quot;film&quot;</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<h3 id="d-1">d)</h3>
+<p>Choose one of the variables representing the public response and
 create a bar plot for the films belonging to a series. Here are the
 details of the plot:</p>
+<pre><code>-   The film series are represented on the x-axis.
+-   Your chosen public response variable is displayed on the y-axis.
+-   Each film in the series is represented as a separate bar. Bars
+    are grouped by film under their respective series on the x-axis.
+    Order the bars within a series according to the release date of
+    the films.
+-   A title and axis labels for context.
+
+What do you notice when comparing the scores of the films in a
+series? Do you see any patterns?</code></pre>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="va">combined_plot</span> <span class="op">&lt;-</span> <span class="va">combined</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Toy Story|Cars|Finding|Incredibles&quot;</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>series <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Toy Story&quot;</span><span class="op">)</span> <span class="op">~</span> <span class="st">&quot;Toy Story&quot;</span>,</span>
+<span>    <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Cars&quot;</span><span class="op">)</span> <span class="op">~</span> <span class="st">&quot;Cars&quot;</span>,</span>
+<span>    <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Finding&quot;</span><span class="op">)</span> <span class="op">~</span> <span class="st">&quot;Finding&quot;</span>,</span>
+<span>    <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">film</span>, <span class="st">&quot;Incredibles&quot;</span><span class="op">)</span> <span class="op">~</span> <span class="st">&quot;Incredibles&quot;</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">combined_plot</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">film</span>, <span class="va">release_date</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">cinema_score</span>, fill <span class="op">=</span> <span class="va">series</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">series</span>, scales <span class="op">=</span> <span class="st">&quot;free_x&quot;</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">&quot;Cinema Scores by Pixar Film Series&quot;</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">&quot;Film&quot;</span>,</span>
+<span>       y <span class="op">=</span> <span class="st">&quot;Cinema Score&quot;</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<p><img role="img" src="data:image/png;base64,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" width="624" /></p>
+</div>
 <ul>
-<li>The film series are represented on the x-axis.</li>
-<li>Your chosen public response variable is displayed on the y-axis.</li>
-<li>Each film in the series is represented as a separate bar. Bars
-are grouped by film under their respective series on the x-axis.
-Order the bars within a series according to the release date of
-the films.</li>
-<li>A title and axis labels for context.</li>
+<li>When comparing the cinema scores of films within each Pixar series, we observe some variation in audience reception.
+For example, Cars 2 received a noticeably lower score compared to the first and third Cars films.
+In contrast, the Incredibles series maintained consistently high scores.
+The Toy Story series shows slight fluctuations, with Toy Story 2 rated highest.
+Overall, while some series show stable audience appreciation, others like Cars show clear drops in reception for certain sequels.</li>
 </ul>
-<p>What do you notice when comparing the scores of the films in a
-series? Do you see any patterns?</p></li>
-</ol>
 <h2 id="exercise-4-open-analysis-4-points">Exercise 4: Open Analysis (4 points)</h2>
 <p>This exercise is a bit more open-ended. You can choose any dataset from
 <a href="https://ourworldindata.org/">Our World in Data</a> and analyze it, while
 determining the research question yourself.</p>
-<ol type="a">
-<li>Go to <a href="https://github.com/owid/owid-datasets/tree/master/datasets" class="uri">https://github.com/owid/owid-datasets/tree/master/datasets</a>
+<h3 id="a-3">a)</h3>
+<p>Go to <a href="https://github.com/owid/owid-datasets/tree/master/datasets" class="uri">https://github.com/owid/owid-datasets/tree/master/datasets</a>
 and choose a dataset that interests you. You can have a look at
-<a href="https://ourworldindata.org/" class="uri">https://ourworldindata.org/</a> to gather some inspiration.</li>
-<li>Download the dataset and track it in git.</li>
-<li>Put the name / title of the dataset and a link to it below.</li>
-</ol>
+<a href="https://ourworldindata.org/" class="uri">https://ourworldindata.org/</a> to gather some inspiration.</p>
+<h3 id="b-2">b)</h3>
+<p>Download the dataset and track it in git.</p>
+<h3 id="c-2">c)</h3>
+<p>Put the name / title of the dataset and a link to it below.</p>
 <ul>
-<li>Dataset Name: …</li>
-<li>Link: <a href="https://github.com/owid/owid-datasets/" class="uri">https://github.com/owid/owid-datasets/</a>…</li>
+<li>Dataset Name: Life Expectancy – OECD<br />
+</li>
+<li>Link: <a href="https://github.com/owid/owid-datasets/tree/master/datasets/Life%20expectancy%20-%20OECD" class="uri">https://github.com/owid/owid-datasets/tree/master/datasets/Life%20expectancy%20-%20OECD</a></li>
 </ul>
-<ol start="4" type="a">
-<li>Come up with a (research) question you want to answer with the data
+<h3 id="d-2">d)</h3>
+<p>Come up with a (research) question you want to answer with the data
 and briefly explain why you believe this is an interesting question
 within one sentence. It should be a question that can be answered
-with the dataset and using R.</li>
-<li>Use R to answer your chosen question. Please limit your analysis to
+with the dataset and using R.
+e) Use R to answer your chosen question. Please limit your analysis to
 the functions and techniques we have covered so far in the course.
 You are <strong>not expected</strong> to use advanced statistical models or
-external packages which haven’t been introduced.</li>
-<li>Create a meaningful plot / figure with the dataset. Make sure to
+external packages which haven’t been introduced.
+f) Create a meaningful plot / figure with the dataset. Make sure to
 provide a figure caption (via the chunk options / Rmarkdown) and
-correctly label the figure.</li>
-</ol>
+correctly label the figure.</p>
 <h2 id="final-note">Final Note</h2>
 <p>Make sure to push all your commits and changes to GitHub before
 submitting the exercise sheet.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
