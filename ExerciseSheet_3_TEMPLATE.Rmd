@@ -133,13 +133,35 @@ pixar_series <- pixar_clean %>%
     .groups = "drop"
   )
 ```
+```{r}
+pixar_series
+```
+
     
 
-c)  Load the `public_response` dataframe into R. Convert the
+### c)  
+Load the `public_response` dataframe into R. Convert the
     `cinema_score` variable into a factor while ensuring the factor
     levels are defined in ascending order, from the lowest to the
     highest score. Combine `public_response` with the `pixar_films`
     dataset using an appropriate merge variable.
+```{r}
+public <- read_csv("public_response.csv")
+```
+```{r}
+public <- public %>%
+  mutate(cinema_score = factor(
+    cinema_score,
+    levels = c("D", "C", "B", "A-", "A", "A+"),
+    ordered = TRUE
+  ))
+```
+```{r}
+levels(public$cinema_score)
+```
+
+
+    
 
 d)  Choose one of the variables representing the public response and
     create a bar plot for the films belonging to a series. Here are the
