@@ -199,6 +199,13 @@ ggplot(combined_plot, aes(x = reorder(film, release_date), y = cinema_score, fil
        y = "Cinema Score") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+-  When comparing the cinema scores of films within each Pixar series, we observe some variation in audience reception.
+For example, Cars 2 received a noticeably lower score compared to the first and third Cars films.
+In contrast, the Incredibles series maintained consistently high scores.
+The Toy Story series shows slight fluctuations, with Toy Story 2 rated highest.
+Overall, while some series show stable audience appreciation, others like Cars show clear drops in reception for certain sequels.  
+
+
 
 
 ## Exercise 4: Open Analysis (4 points)
