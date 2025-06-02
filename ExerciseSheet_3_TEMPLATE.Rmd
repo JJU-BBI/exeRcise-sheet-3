@@ -269,11 +269,26 @@ change_by_country <- oecd_summary %>%
 -   Life expectancy in OECD countries has steadily increased from around 64 years in 1960 to over 78 years in 2015.
 Countries such as China, Turkey and India experienced the most significant improvements, gaining over 25 years.
 This demonstrates the positive impact of healthcare, economic growth, and policy reforms in enabling some countries to catch up significantly over time.  
-
     
-f)  Create a meaningful plot / figure with the dataset. Make sure to
+### f)  
+Create a meaningful plot / figure with the dataset. Make sure to
     provide a figure caption (via the chunk options / Rmarkdown) and
-    correctly label the figure.
+    correctly label the figure.  
+
+```{r life-trend-top3, fig.cap="Life expectancy trends in China, Turkey and India (1960–2015)", echo=TRUE}
+top3 <- c("China", "Turkey", "India")
+oecd_summary %>%
+  filter(country %in% top3) %>%
+  ggplot(aes(x = year, y = life_expectancy, color = country)) +
+  geom_line(linewidth = 1.2) +
+  labs(
+    title = "Life Expectancy Trends in China, Turkey and India",
+    x = "Year",
+    y = "Life Expectancy"
+  ) +
+  theme_minimal()
+```
+    
 
 ## Final Note
 
