@@ -1,7 +1,7 @@
 ---
 title: "Exercise #3"
 subtitle: "Fortgeschrittene Statistische Software für NF"
-author: "Hyein Jeong (12449353), Joo Won Kim (12758995)"
+author: "Joo Won Kim (12758995)"
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
